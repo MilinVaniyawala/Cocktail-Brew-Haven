@@ -1,0 +1,46 @@
+<%- include('../layouts/header', { title: 'Cocktail' }) %>
+
+    <!-- Main content -->
+    <main class="container">
+        <h1 class="text-center">All Cocktails</h1>
+        <!-- Dropdown for selecting alcohol -->
+        <div class="mb-3">
+            <select class="form-select" id="alcoholSelect">
+                <option selected disabled>Select Alcohol</option>
+                <% alcoholTypeData.drinks.forEach(alcohol=> { %>
+                    <option value="<%= alcohol.strAlcoholic %>">
+                        <%= alcohol.strAlcoholic %>
+                    </option>
+                    <% }); %>
+            </select>
+        </div>
+
+        <% if (cocktailData.drinks && cocktailData.drinks.length> 0) { %>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <% cocktailData.drinks.forEach(cocktail=> { %>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="<%= cocktail.strDrinkThumb %>" class="card-img-top"
+                                alt="<%= cocktail.strDrink %>">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= cocktail.strDrink %>
+                                </h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <%= cocktail.strAlcoholic %>
+                                </h6>
+                                <p class="card-text">
+                                    <%= cocktail.strInstructions %>
+                                </p>
+                                <a href="#" class="btn btn-primary">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+            <% } else { %>
+                <p class="text-center">No cocktails found</p>
+                <% } %>
+    </main>
+
+    <%- include('../layouts/footer') %>
