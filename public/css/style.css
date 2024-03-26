@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
@@ -8,35 +9,214 @@ body {
   margin: 0;
 }
 
+/* Fonts */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.navbar-brand,
+.card-title,
+.card-subtitle,
+.card-text {
+  font-family: "Spectral", sans-serif;
+}
+
+.navbar-brand {
+  font-family: "Oleo Script Swash Caps", cursive;
+  color: #ffffff !important;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #011126 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #bf9c88 !important;
+}
+
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-footer {
-  background-color: #f8f9fa;
-  padding: 5px 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 main {
   flex: 1;
 }
 
-/* cocktail card styling */
+/* Welcome Section */
+.welcome-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-section .text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.welcome-section h1,
+.welcome-section p {
+  color: #ffffff;
+}
+
+/* Button */
+.btn-explore {
+  background-color: #ffffff;
+  color: #011126;
+  border: none;
+}
+
+.btn-explore:hover {
+  background-color: #011126;
+  color: #ffffff;
+}
+
+/* Cocktail Card */
+.card {
+  background-color: #f2dcc9 !important;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
 .card-title {
-  font-size: 1.25rem;
+  color: #011126;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.card-subtitle {
-  font-size: 1rem;
+.btn-primary {
+  background-color: #011126;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.card-text {
-  font-size: 0.875rem;
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #011126;
+}
+
+/* Drink Details */
+.drink-name {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.drink-details {
+  margin-top: 20px;
+}
+
+.drink-category,
+.drink-alcohol,
+.drink-glass {
+  margin-bottom: 10px;
+}
+
+.drink-ingredients {
+  margin-top: 20px;
+}
+
+.drink-ingredients ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.drink-ingredients li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.drink-ingredients li span {
+  flex-grow: 1;
+}
+
+.drink-image {
+  text-align: center;
+}
+
+.drink-instructions {
+  margin-top: 20px;
+}
+
+.store-link {
+  color: #bf9c88; /* Link color */
+  /* text-decoration: none; */
+  transition: color 0.3s ease;
+}
+
+.store-link:hover {
+  color: #7e6458; /* Link color on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #011126;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .drink-name {
+    font-size: 20px;
+  }
+
+  .drink-image {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcome-section h1 {
+    font-size: 0.9rem;
+    padding: 0 !important;
+  }
+  .welcome-section p {
+    font-size: 0.8rem;
+    padding: 0 !important;
+  }
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .btn .card-title {
+    font-size: 1rem;
+  }
 }

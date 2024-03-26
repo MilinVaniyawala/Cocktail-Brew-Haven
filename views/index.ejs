@@ -1,20 +1,54 @@
 <%- include('layouts/header', { title: 'Home' }) %>
-
     <!-- Main content -->
-    <main class="container">
-        <!-- Specific page content -->
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to Cocktail & Brewery Explorer</h1>
-                <p>Explore a world of cocktails and breweries with us!</p>
+    <main>
+        <!-- Welcome Section -->
+        <!-- Image Citation: https://unsplash.com/photos/a-table-topped-with-lots-of-different-types-of-drinks-fE3uYk0Ri1U -->
+        <section class="welcome-section text-center position-relative">
+            <img src="/img/cocktail-1.jpg" alt="a table topped with lots of different types of drinks"
+                class="img-fluid">
+            <div class="overlay"></div>
+            <div class="text-overlay position-absolute top-50 start-50 translate-middle">
+                <header>
+                    <h1 class="display-6 py-3">Welcome to Cocktail Explorer</h1>
+                </header>
+                <p class="lead py-3">Explore a world of cocktails with us!</p>
+                <a href="/cocktail" class="btn btn-primary btn-lg btn-explore">Explore Cocktails</a>
             </div>
         </section>
 
-        <!-- Featured cocktails section -->
-        <section class="featured-cocktails">
+
+        <!-- About Section -->
+        <!-- Image Citation: https://unsplash.com/photos/yellow-and-purple-drink-in-wine-glass-SfqrbnnW8PQ -->
+        <section class="about-section py-5">
             <div class="container">
-                <h2>Featured Cocktails</h2>
-                <!-- Add featured cocktails here -->
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-text">
+                            <h2 class="text-center text-lg-start">About Us</h2>
+                            <p>
+                                Welcome to Cocktail Explorer, where we embark on a journey of taste and discovery,
+                                crafting exceptional cocktails for every occasion and palate. Our mission is to offer a
+                                diverse array of cocktail creations that cater to a wide range of preferences and
+                                tastes.
+                            </p>
+                            <p>
+                                With our team of experienced mixologists, we meticulously select the finest ingredients
+                                to ensure each cocktail delivers a harmonious blend of flavors and aromas. From classic
+                                favorites to innovative concoctions, we strive to provide an unforgettable drinking
+                                experience for our customers.
+                            </p>
+                            <p>
+                                At Cocktail Explorer, we are passionate about sustainability and environmental
+                                responsibility. We are dedicated to sourcing ingredients ethically and minimizing our
+                                environmental footprint, ensuring that future generations can continue to explore and
+                                enjoy the art of cocktail crafting.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="/img/cocktail-2.jpg" alt="yellow and purple drink in wine glass" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </section>
     </main>

@@ -1,0 +1,56 @@
+<%- include('../layouts/header', { title: 'Cocktail Detail' }) %>
+    <header class="py-4">
+        <h1 class="text-center">Cocktail Detail</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row py-3">
+                <% cocktail=cocktailDetail.drinks[0] %>
+                    <div class="col-md-6">
+                        <div class="drink-image">
+                            <img src="<%= cocktail.strDrinkThumb %>" alt="<%= cocktail.strDrink %>" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="drink-name">
+                            <%= cocktail.strDrink %>
+                        </h2>
+                        <div class="drink-details">
+                            <div class="drink-category">Category: <%= cocktail.strCategory %>
+                            </div>
+                            <div class="drink-alcohol">Alcohol Type: <%= cocktail.strAlcoholic %>
+                            </div>
+                            <div class="drink-glass">Glass Type: <%= cocktail.strGlass %>
+                            </div>
+                            <div class="drink-ingredients">
+                                <h5>Main Ingredients</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span>
+                                            <%= cocktail.strIngredient1 %>
+                                        </span>
+                                        <a href="/cocktail/stores/<%= cocktail.strIngredient1 %>"
+                                            class="store-link">Find
+                                            Nearby Stores</a>
+                                    </li>
+                                    <li>
+                                        <span>
+                                            <%= cocktail.strIngredient2 %>
+                                        </span>
+                                        <a href="/cocktail/stores/<%= cocktail.strIngredient2 %>"
+                                            class="store-link">Find
+                                            Nearby Stores</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="drink-instructions">
+                                <em>Instructions: <%= cocktail.strInstructions %></em>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../layouts/footer') %>
